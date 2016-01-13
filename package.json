@@ -1,0 +1,28 @@
+{
+  "name": "marionette-project",
+  "version": "1.0.0",
+  "description": "Introducion project to Marionette stuff",
+  "repository" :
+    { "type" : "git"
+    , "url" : "https://github.com/martinezp/marionette-project.git"
+    },
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server",
+    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" "
+  },
+  "license": "ISC",
+  "dependencies": {
+    "jquery":"2.2.0",
+    "JSON2":"0.1.0",
+    "underscore":"1.8.3",
+    "backbone":"1.2.3",
+    "backbone.marionette": "2.4.4"
+  },
+  "devDependencies": {
+    "concurrently": "^1.0.0",
+    "lite-server": "^1.3.1",
+    "typescript": "^1.7.3"
+  }
+}
