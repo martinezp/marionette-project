@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Marionette Contact Manager</title>
+	</head>
+	
+	<body>
+		
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<span class="brand">Contact manager</span>
+				</div>
+			</div>
+		</div>
+		
+		<div id="app-container">
+			<div id="main-region" class="container">
+				Loading...
+			</div>
+		</div>
+
+		<!-- 1. Load JS libraries -->
+		<script src="./node_modules/jquery/dist/jquery.js"></script>
+		<script src="./node_modules/JSON2/json2.js"></script>
+		<script src="./node_modules/underscore//underscore.js"></script>
+		<script src="./node_modules/backbone/backbone.js"></script>
+		<script src="./node_modules/backbone.marionette/lib/backbone.marionette.js"></script>
+
+		<!-- 2. Load App JS libraries -->
+		<script src="./assets/js/app/config/marionette/templateCache.js"></script>
+		<script language="javascript" type="text/javascript" src="./assets/js/app.js"></script>
+		<script language="javascript" type="text/javascript" src="./assets/js/entities/contact.js"></script>
+		<script language="javascript" type="text/javascript" src="./assets/js/app/contacts/list_templates.js"></script>
+		<script language="javascript" type="text/javascript" src="./assets/js/app/contacts/list/list_view.js"></script>
+		<script language="javascript" type="text/javascript" src="./assets/js/app/contacts/list/list_controller.js"></script>
+
+		<!-- 3. Load styles -->
+		<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" href="./assets/css/application.css">
+
+		<!-- 4. Start the application -->
+		<script type="text/javascript">
+			ContactManager.start();
+		</script>
+		
+	</body>
+</html>
