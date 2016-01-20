@@ -22,15 +22,20 @@ ContactManager.module("ContactsApp.List", function(List, ContactManager, Backbon
 				});
 
 				contactsListView.on("childview:contact:edit", function(childView, model){
-					
 					var view = new ContactManager.ContactsApp.Edit.Contact({
-						model: model
+						model: model,
+						asModal: true
 					});
-					view.on("show", function(){
-						this.$el.dialog({
-							modal: true,
-							width: "500"
-						});
+					view.on("contact:submit", function(data){
+						if (model.save(data)) {
+							childView.render();
+							// Two ways to close the dialog
+							// ContactManager.regions.dialog.empty();
+							view.$el.dialog("close");
+							childView.flash("success");
+						} else {
+							view.triggerMethod("contact:submit:invalid", model.validationError);
+						}
 					});
 					ContactManager.regions.dialog.show(view);
 				});

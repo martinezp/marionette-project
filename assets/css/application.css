@@ -11,3 +11,10 @@ a.btn span.glyphicon, button.btn span.glyphicon {
 	top: 2px;
 }
 
+div.ui-dialog-content {
+	padding: 15px;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+	float: right;
+}

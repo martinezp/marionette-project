@@ -1,7 +1,6 @@
 ContactManager.module("ContactsApp.Edit.Templates", function(Templates, ContactManager, Backbone, Marionette, $, _) {
 
 	Templates.Contact = `
-		<h1>Edit <%- firstName %> <%- lastName %></h1>
 		<form>
 			<div class="form-group">
 				<label for="contact-firstName" class="control-label">First name:</label>

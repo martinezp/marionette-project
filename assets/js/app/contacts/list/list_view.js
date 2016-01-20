@@ -24,6 +24,14 @@ ContactManager.module("ContactsApp.List", function(List, ContactManager, Backbon
 				this.$el.removeClass("warning");
 			}
 		},
+		flash: function(cssClass){
+			var $view = this.$el;
+			$view.hide().toggleClass(cssClass).fadeIn(800, function(){
+				setTimeout(function(){
+					$view.toggleClass(cssClass)
+				}, 500);
+			});
+		},
 		alertCellText: function(e){
 			alert($(e.target).text());
 		},
