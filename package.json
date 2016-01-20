@@ -9,17 +9,22 @@
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "lite": "lite-server",
+    "lite": "lite-server --baseDir ./assets/js --baseDir ./",
     "start": "concurrent \"npm run tsc:w\" \"npm run lite\" "
   },
   "license": "ISC",
   "dependencies": {
+    "requirejs": "2.1.22",
     "bootstrap": "^3.3.6",
-    "jquery":"2.2.0",
-    "JSON2":"0.1.0",
-    "underscore":"1.8.3",
-    "backbone":"1.2.3",
-    "backbone.marionette": "2.4.4"
+    "jquery": "2.2.0",
+    "jquery-ui-bootstrap": "1.0.0",
+    "JSON2": "0.1.0",
+    "underscore": "1.8.3",
+    "backbone": "1.2.3",
+    "backbone.localstorage": "1.1.16",
+    "backbone.marionette": "2.4.4",
+    "spin": "0.0.1",
+    "backbone.syphon": "0.6.3"
   },
   "devDependencies": {
     "concurrently": "^1.0.0",

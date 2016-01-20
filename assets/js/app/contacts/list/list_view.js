@@ -2,14 +2,14 @@ ContactManager.module("ContactsApp.List", function(List, ContactManager, Backbon
 
 	List.Contact = Marionette.ItemView.extend({
 		tagName: "tr",
-		template: "ContactManager.ContactsApp.List.Templates.contactView",
+		template: "ContactManager.ContactsApp.List.Templates.ContactView",
 		events: {
 			"click": "highlightName",
-			"click td": "alertCellText",
-			"click button.js-delete": "deleteContact"
+			"click td a.js-show": "showClicked",
+			"click button.js-delete": "deleteClicked",
+			"click td a.js-edit": "editClicked"
 		},
 		remove: function(){
-			// this.$el.fadeOut();
 			var self = this;
 			this.$el.fadeOut(function(){
 				Marionette.ItemView.prototype.remove.call(self);
@@ -27,16 +27,26 @@ ContactManager.module("ContactsApp.List", function(List, ContactManager, Backbon
 		alertCellText: function(e){
 			alert($(e.target).text());
 		},
-		deleteContact: function(e){
+		deleteClicked: function(e){
 			e.stopPropagation();
 			this.trigger("contact:delete", this.model);
+		},
+		showClicked: function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			this.trigger("contact:show", this.model);
+		},
+		editClicked: function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			this.trigger("contact:edit", this.model);
 		}
 	});
 
 	List.Contacts = Marionette.CompositeView.extend({
 		tagName: "table",
 		className: "table table-hover",
-		template: "ContactManager.ContactsApp.List.Templates.contactsView",
+		template: "ContactManager.ContactsApp.List.Templates.ContactsView",
 		childView: List.Contact,
 		childViewContainer: "tbody",
 		onChildviewContactDelete: function(){
