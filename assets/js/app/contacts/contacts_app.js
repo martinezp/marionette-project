@@ -4,13 +4,14 @@ ContactManager.module("ContactsApp", function(ContactsApp, ContactManager, Backb
 		appRoutes: {
 			"contacts": "listContacts",
 			"contacts/:id": "showContact",
-			"contacts/:id/edit": "editContact"
+			"contacts/:id/edit": "editContact",
+			"contacts/filter/criterion::filterCriterion": "listContacts"
 		}
 	});
 
 	var API = {
-		listContacts: function(){
-			ContactsApp.List.Controller.listContacts();
+		listContacts: function(filterCriterion){
+			ContactsApp.List.Controller.listContacts(filterCriterion);
 		},
 
 		showContact: function(id){
@@ -35,6 +36,14 @@ ContactManager.module("ContactsApp", function(ContactsApp, ContactManager, Backb
 	ContactManager.on("contact:edit", function(id){
 		ContactManager.navigate("contacts/" + id + "/edit");
 		API.editContact(id);
+	});
+
+	ContactManager.on("contacts:filter", function(filterCriterion){
+		if (filterCriterion) {
+			ContactManager.navigate("contacts/filter/criterion:" + filterCriterion );
+		} else {
+			ContactManager.navigate("contacts");
+		}
 	});
 
 	ContactsApp.on("start", function(){

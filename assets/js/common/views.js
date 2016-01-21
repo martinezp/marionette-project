@@ -35,3 +35,4 @@ ContactManager.module("Common.Views", function(Views, ContactManager, Backbone, 
 	});
 
 });
+

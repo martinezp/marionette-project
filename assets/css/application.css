@@ -1,5 +1,13 @@
+div.container .brand {
+	color: #918900;
+}
+
+.navbar-inner, .navbar-inverse {
+   min-height: 25px;
+}
+
 body {
-	padding-top: 60px;
+	padding-top: 40px;
 }
 
 div.spinner {
