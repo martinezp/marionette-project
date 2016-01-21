@@ -1,4 +1,4 @@
-ContactManager.module("ContactsApp.List.Templates", function(Templates, ContactManger, Backbone, Marionette, $, _){
+ContactManager.module("ContactsApp.List.Templates", function(Templates, ContactManager, Backbone, Marionette, $, _){
 
 	Templates.ContactView = `
 		<td><%- firstName %></td>

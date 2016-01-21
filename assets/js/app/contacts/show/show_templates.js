@@ -1,4 +1,4 @@
-ContactManager.module("ContactsApp.Show.Templates", function(Templates, ContactManger, Backbone, Marionette, $, _){
+ContactManager.module("ContactsApp.Show.Templates", function(Templates, ContactManager, Backbone, Marionette, $, _){
 
 	Templates.ContactView = `
 		<h1><%- firstName %> <%- lastName %></h1>
