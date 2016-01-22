@@ -7,15 +7,10 @@
 	
 	<body>
 		
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<span class="brand">Contact manager</span>
-				</div>
-			</div>
-		</div>
+		
 		
 		<div id="app-container">
+			<div id="header-region"></div>
 			<div id="main-region" class="container">
 				Loading...
 			</div>
@@ -32,6 +27,7 @@
 		<script src="./node_modules/backbone.marionette/lib/backbone.marionette.js"></script>
 		<script src="./node_modules/spin/dist/spin.js"></script>
 		<script src="./node_modules/backbone.syphon/lib/backbone.syphon.js"></script>
+		<script src="https://raw.githubusercontent.com/derickbailey/backbone.picky/master/lib/backbone.picky.js"></script>
 
 		<!-- 2. Load App JS libraries -->
 		<script src="./assets/js/app/config/marionette/templateCache.js"></script>
@@ -40,17 +36,23 @@
 		<script language="javascript" type="text/javascript" src="./assets/js/app/config/storage/localstorage.js"></script>
 		<script language="javascript" type="text/javascript" src="./assets/js/entities/contact.js"></script>
 		<script language="javascript" type="text/javascript" src="./assets/js/entities/common.js"></script>
+		<script language="javascript" type="text/javascript" src="./assets/js/entities/header.js"></script>
 
 		<script language="javascript" type="text/javascript" src="./assets/js/common/app_templates.js"></script>
 		<script language="javascript" type="text/javascript" src="./assets/js/common/views.js"></script>
 
-		<!-- 2.1 ContactApp libraries -->
-		<script language="javascript" type="text/javascript" src="./assets/js/app/contacts/common/views.js"></script>
-
 		<script language="javascript" type="text/javascript" src="./assets/js/app/contacts/contacts_app.js"></script>
 		<script language="javascript" type="text/javascript" src="./assets/js/app/about/about_app.js"></script>
+		<script language="javascript" type="text/javascript" src="./assets/js/app/header/header_app.js"></script>
 
+		<script language="javascript" type="text/javascript" src="./assets/js/app/contacts/common/views.js"></script>
 
+		<!-- 2.0 Header libraries -->
+		<script language="javascript" type="text/javascript" src="./assets/js/app/header/show/show_templates.js"></script>
+		<script language="javascript" type="text/javascript" src="./assets/js/app/header/show/show_view.js"></script>
+		<script language="javascript" type="text/javascript" src="./assets/js/app/header/show/show_controller.js"></script>
+
+		<!-- 2.1 ContactApp libraries -->
 		<script language="javascript" type="text/javascript" src="./assets/js/app/contacts/list/list_templates.js"></script>
 		<script language="javascript" type="text/javascript" src="./assets/js/app/contacts/list/list_view.js"></script>
 		<script language="javascript" type="text/javascript" src="./assets/js/app/contacts/list/list_controller.js"></script>
